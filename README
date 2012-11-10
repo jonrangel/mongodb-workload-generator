@@ -18,6 +18,13 @@ export LDFLAGS="-L/usr/X11/lib"
 export CFLAGS="-I/usr/X11/include -I/usr/X11/include/freetype2 -I/usr/X11/include/libpng12"
 sudo pip install matplotlib
 
+Running a workload
+==================
+1) cd into the workload directory (e.g. "cd inbox") 
+2) edit the config file for the workload implementation you want to run (e.g. inbox/fanout-on-write/config.cfg)
+3) multimech-run <workload-name> (e.g. multimech-run fanout-on-write)
+4) results are stored in the results directory of the implementation (e.g. inbox/fanout-on-write/results)
+
 Workloads
 =========
 
