@@ -16,7 +16,7 @@ class Transaction(object):
    def run(self):
       owner = self.user_pool.get()
       start_timer = time.time()
-      for msg in self.db.messages.find({'owner': owner}).sort('time', DESCENDING).limit(50):
+      for msg in self.db.inboxes.find({'owner': owner}).sort('sequence', DESCENDING).limit(1):
          continue
       latency = time.time() - start_timer
       self.custom_timers["Read inbox"] = latency
